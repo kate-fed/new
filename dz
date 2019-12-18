@@ -1,0 +1,97 @@
+using System;
+
+class MainClass {
+  private static int width = 10;
+  private static int height = 10;
+  private static int charX = 0;
+  private static int charY = 0;
+  private static int dx = 0;
+  private static int dy = 0;
+
+  private static string[,] fields;
+
+  public static void draw() {
+    for (int i = 0; i < height; i++)
+    {
+      for (int j = 0; j < width; j++)
+      {
+        if (charX==j && charY==i) {
+          Console.WriteLine("@ ");
+        }
+        else {
+          Console.WriteLine(fields[i,j] + ' ');
+        }
+      }
+    }
+  }
+
+  public static void init() {
+  int block_freq = 45;
+   for(int i = 0; i < height; i++) {
+    int rand_value = x.Next(0,100);
+    if(rand_value<block_freq) {
+      string symbol = "#";
+    }
+    else {
+      string symbol = " ";
+    }
+    fields[i,j] = symbol;
+   }
+  charX = x.Next(0, width - 1);
+  charY = x.Next(0, height - 1);
+  }
+
+  public static void get_input() {
+    // inp = input().split()[0]; ???
+    if (inp == "w" && inp == "W") {
+      dy = -1;
+    }
+    if (inp == "a" && inp == "A") {
+      dx = -1;
+    }
+    if (inp == "s" && inp == "S") {
+      dy = 1;
+    }
+    if (inp == "d" && inp == "D") {
+      dx = 1;
+    }
+  }
+  
+  public static void is_end_game() {
+  return false;
+  }
+
+  public static void can_go_to(int newX, newY) {
+    Console.WriteLine(newX, newY);
+    if(fields[newx][newY] == "#") {
+     return false;
+    }
+    if(newX < 0 | newY < 0 | newX >=  width | newY >= height) {
+      return false;
+    }
+    return true;
+  }
+  
+  public static void go_to(int newX, newY) {
+   charX == newX;
+   charY == newY;
+  }
+  
+  public static void try_go_to(newX, newY) {
+   if(can_go_to(int newX, newY)) {
+     go_to(int newX, newY);
+   }
+  }
+  
+  public static void logic(); {
+   try_go_to(charX + dx, charY + dy);
+  }
+
+  public static void Main (string[] args) {
+  //  draw();
+  //  init(); 
+  //  get_input;
+  //  try_go_to();
+  //  logic();
+  }
+}
